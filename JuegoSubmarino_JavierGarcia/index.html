@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./demo.css">
+    <title>Plantilla de juego</title>
+</head>
+<body>
+    <div id="gameBoard">
+        <template id="casilla-template">
+            <div class="casilla"></div>
+        </template>
+    </div>
+    <div id="gameStatus"></div>
+    <br>
+    <label for="">¿A que casilla quieres disparar?</label>
+    <div class="casillaDispara">
+        <input type="number" id="inputCasilla"/>
+    </div>
+    <br>
+    <button id="btnShot">Disparar</button><button id="btnRestart">Reiniciar juego</button>
+    <script src="./js/game.js" type="module"></script>
+</body>
+</html>
