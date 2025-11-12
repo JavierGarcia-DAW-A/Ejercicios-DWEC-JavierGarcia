@@ -1,4 +1,4 @@
-
+/* Estilos para el juego */
 #gameBoard {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

@@ -1,8 +1,12 @@
+/* Importamos las clases que vamos a necesitar */
 import { Submarino } from "./Submarino.js";
 import { Vecinos, Celda } from "./Celda.js";
 
+/* Aquí definimos y exportamos UI, que se encarga de la interfaz de usuario */
 export const UI = {
+    /* Declarar game, que luego cambiará al juego que se quiera jugar */
     game : null,
+    /* Creamos un objeto, con los controles del juego y DOM */
     control : {
         board: null,
         status: null,
@@ -11,8 +15,10 @@ export const UI = {
         casillaDisparada: null
     },
 
+    /* Creamos una instancia submarino */
     submarino : new Submarino(),
 
+    /* Iniciamos los valores de control del juego */
     init: (domControl, game)=>{
         UI.control.board = document.getElementById(domControl.board);
         UI.control.status = document.getElementById(domControl.status);
@@ -23,12 +29,14 @@ export const UI = {
         
     },
 
+    /* Creamos un array bidimensional de las celdas */
     malla : Array.from({ length: 5 }, (_, i) => 
         Array.from({ length: 5 }, (_, j) => 
             new Celda(i, j)
         )
     ),
 
+    /* Definimos los eventos */
     setEvent: (domControl) => {
         document.getElementById(domControl.btnShot[0]).addEventListener('click', ()=>{
             domControl.btnShot[1]();
@@ -39,6 +47,7 @@ export const UI = {
         });
 
     },
+    /* Inicializamos el juego */
     start(game) {
 
         UI.game = game;
@@ -72,6 +81,7 @@ export const UI = {
         this.submarino.init(UI.control.size);
         UI.control.status.textContent = "Juego iniciado";
     },
+    /* Para cambiar el estado del juego */
     changeStatus(newStatus) {
         UI.control.status.textContent = newStatus;
     }

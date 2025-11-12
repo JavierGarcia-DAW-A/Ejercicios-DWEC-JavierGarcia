@@ -1,3 +1,5 @@
+/* Esta clase no la uso, pero la dejo aquí por si acaso */
+/*
 const Vecinos = {
     ARRIBA:0,
     ABAJO:1,
@@ -19,3 +21,4 @@ class Celda{
 }
 
 export {Vecinos,Celda}
+*/

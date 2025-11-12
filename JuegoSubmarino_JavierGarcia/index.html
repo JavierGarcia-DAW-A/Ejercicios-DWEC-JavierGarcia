@@ -7,19 +7,24 @@
     <title>Plantilla de juego</title>
 </head>
 <body>
+    <!-- Aquí es donde vamos a insertar el tablero -->
     <div id="gameBoard">
         <template id="casilla-template">
             <div class="casilla"></div>
         </template>
     </div>
+    <!-- Aquí nos va a ir mostrando el estado del juego -->
     <div id="gameStatus"></div>
     <br>
+    <!-- Insertamos la casilla a la que le queremos disparar -->
     <label for="">¿A que casilla quieres disparar?</label>
     <div class="casillaDispara">
         <input type="number" id="inputCasilla"/>
     </div>
     <br>
+    <!-- Botón que ejecutara la opción de disparar y la de reiniciar el juego -->
     <button id="btnShot">Disparar</button><button id="btnRestart">Reiniciar juego</button>
+    <!-- Conectamos el js -->
     <script src="./js/game.js" type="module"></script>
 </body>
 </html>
