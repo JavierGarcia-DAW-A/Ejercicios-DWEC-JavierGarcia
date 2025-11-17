@@ -1,0 +1,29 @@
+.arriba {
+    display: flex;
+}
+
+.abajo {
+    display: flex;
+}
+
+.tecla {
+    width: 50vw;
+    height: 50vh;
+    border: 1px solid black;
+}
+
+#teclaRoja {
+    border-top-left-radius: 100%;
+}
+
+#teclaAmarilla {
+    border-bottom-left-radius: 100%;
+}
+
+#teclaVerde {
+    border-top-right-radius: 100%;
+}
+
+#teclaAzul {
+    border-bottom-right-radius: 100%;
+}
