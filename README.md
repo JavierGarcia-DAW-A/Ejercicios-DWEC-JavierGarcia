@@ -9,5 +9,5 @@ He pasado gran parte de la tarde del Jueves intentando añadir algo más, pero n
 
 
 ## Ejercicio Simon :
-# Lunes:
+### Lunes:
 He conseguido crear las 4 celdas, con sus colores y hacer que se ilumninen y se apaguen de forma aleatoria, pero mediante una secuencia predefinida, ya que en aleatorio no se detiene.
