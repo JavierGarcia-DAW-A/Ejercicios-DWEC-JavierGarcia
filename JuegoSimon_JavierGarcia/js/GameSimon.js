@@ -14,14 +14,15 @@ export const GameSimon = {
 
     start: () => {
         setTimeout(() => {
+            /*
             let numLista = Math.floor(Math.random() * GameSimon.lista.length);
             let elemento = GameSimon.lista[numLista];
-            //elemento = GameSimon.lista.pop();
+            */
+            let elemento = GameSimon.lista.pop();
             if (elemento != undefined) UI.pulsarTecla(elemento.id,elemento.colorOn,elemento.colorOff);
             console.log(elemento);
             lista.
             console.log("Ejecutando");
         },1000)
-    }
-        
+    }   
 }
