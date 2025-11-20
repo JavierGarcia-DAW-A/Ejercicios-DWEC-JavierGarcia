@@ -18,6 +18,7 @@ export const UI = {
         
     },
 */
+
     init: (id, colorOn, colorOff) => {
         const tecla = document.getElementById(id);
         tecla.style.backgroundColor = colorOn;
@@ -26,14 +27,6 @@ export const UI = {
             tecla.style.backgroundColor = colorOff;
         });
     },
-    
-    pulsarTecla: (id, colorOn, colorOff) => {
-        const tecla = document.getElementById(id);
-        tecla.style.backgroundColor = colorOn;
 
-        setTimeout(() => {
-            tecla.style.backgroundColor = colorOff;
-            GameSimon.start();
-        },1000);
-    }
+    
 }

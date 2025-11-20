@@ -2,6 +2,11 @@ import { UI } from "./UI.js";
 
 export const GameSimon = {
     lista : [],
+    listaOrden : [],
+
+    setListaOrden : (listaOrden) => {
+        GameSimon.listaOrden = listaOrden;
+    },
 
     add : (id, colorOn, colorOff) => {
         GameSimon.lista.push({
@@ -14,15 +19,29 @@ export const GameSimon = {
 
     start: () => {
         setTimeout(() => {
-            /*
-            let numLista = Math.floor(Math.random() * GameSimon.lista.length);
-            let elemento = GameSimon.lista[numLista];
-            */
-            let elemento = GameSimon.lista.pop();
-            if (elemento != undefined) UI.pulsarTecla(elemento.id,elemento.colorOn,elemento.colorOff);
-            console.log(elemento);
-            lista.
+
+            GameSimon.listaOrden.forEach((item) => {
+                const elemento = GameSimon.lista[item];
+
+                setTimeout(() => {
+                    GameSimon.pulsarTecla(elemento);
+                }, 1000);
+            });
+
             console.log("Ejecutando");
-        },1000)
-    }   
+
+        }, 1000);
+    },
+
+    
+    pulsarTecla: (elemento) => {
+        
+        const tecla = document.getElementById(elemento.id);
+        tecla.style.backgroundColor = elemento.colorOn;
+
+        setTimeout(() => {
+            tecla.style.backgroundColor = elemento.colorOff;
+        },1000);
+
+    }
 }

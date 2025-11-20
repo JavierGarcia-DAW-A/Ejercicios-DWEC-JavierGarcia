@@ -44,3 +44,5 @@ GameSimon.add('teclaVerde', 'green', 'lightgreen');
 
 GameSimon.start();
 
+GameSimon.setListaOrden([0,2,3,1,3,0,1,0]);
+
