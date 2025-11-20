@@ -13,3 +13,6 @@ He pasado gran parte de la tarde del Jueves intentando añadir algo más, pero n
 ## Ejercicio Simon :
 ### Lunes:
 He conseguido crear las 4 celdas, con sus colores y hacer que se ilumninen y se apaguen de forma aleatoria, pero mediante una secuencia predefinida, ya que en aleatorio no se detiene.
+
+### Jueves:
+Hasta el momento he conseguido crear la secuencia, junto con el foreach y que se iluminen, el problema es que se iluminan todos a la vez.
