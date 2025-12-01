@@ -1,14 +1,14 @@
 import { UI } from "./UI.js";
 
 export const GameSimon = {
-    lista : [],
-    listaOrden : [],
+    lista: [],
+    listaOrden: [],
 
-    setListaOrden : (listaOrden) => {
+    setListaOrden: (listaOrden) => {
         GameSimon.listaOrden = listaOrden;
     },
 
-    add : (id, colorOn, colorOff) => {
+    add: (id, colorOn, colorOff) => {
         GameSimon.lista.push({
             id: id,
             colorOn: colorOn,
@@ -17,31 +17,42 @@ export const GameSimon = {
         console.log(GameSimon.lista);
     },
 
-    start: () => {
-        setTimeout(() => {
 
-            GameSimon.listaOrden.forEach((item) => {
-                const elemento = GameSimon.lista[item];
+    start: async () => {
+        for (let index of GameSimon.listaOrden) {
+            const elemento = GameSimon.lista[index];
+            await GameSimon.pulsarTecla(elemento);
+        }
 
-                setTimeout(() => {
-                    GameSimon.pulsarTecla(elemento);
-                }, 1000);
-            });
-
-            console.log("Ejecutando");
-
-        }, 1000);
+        for (let index of GameSimon.listaOrden) {
+            await GameSimon.turnoJugador(index);
+        }
     },
 
-    
-    pulsarTecla: (elemento) => {
-        
-        const tecla = document.getElementById(elemento.id);
-        tecla.style.backgroundColor = elemento.colorOn;
+ 
+    pulsarTecla: async (elemento) => {
+        return new Promise((resolve) => {
 
-        setTimeout(() => {
-            tecla.style.backgroundColor = elemento.colorOff;
-        },1000);
+            const tecla = document.getElementById(elemento.id);
+            tecla.style.backgroundColor = elemento.colorOn;
 
+            setTimeout(() => {
+                tecla.style.backgroundColor = elemento.colorOff;
+                resolve();
+            }, 1000);
+        });
+    },
+
+    turnoJugador: (index) => {
+        document.addEventListener('click', (e) => {
+            if ( e.target.id === GameSimon.lista[index].id) {
+                console.log("Voy bien");
+            } else {
+                console.log(GameSimon.lista[index].id);
+                console.log(e.target.id);
+                console.log("Mal, fatal, horrible");
+            }
+        })
     }
 }
+

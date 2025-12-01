@@ -42,7 +42,10 @@ GameSimon.add('teclaAzul', 'blue', 'lightcyan');
 GameSimon.add('teclaAmarilla', 'yellow', 'lightyellow');
 GameSimon.add('teclaVerde', 'green', 'lightgreen');
 
-GameSimon.start();
-
 GameSimon.setListaOrden([0,2,3,1,3,0,1,0]);
+
+setTimeout(() => {
+    GameSimon.start();
+},1000)
+
 
