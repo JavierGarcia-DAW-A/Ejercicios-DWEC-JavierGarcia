@@ -26,10 +26,11 @@ export const GameSimon = {
 
         for (let index of GameSimon.listaOrden) {
             await GameSimon.turnoJugador(index);
+            index = index + 1;
         }
     },
 
- 
+
     pulsarTecla: async (elemento) => {
         return new Promise((resolve) => {
 
@@ -44,14 +45,16 @@ export const GameSimon = {
     },
 
     turnoJugador: (index) => {
-        document.addEventListener('click', (e) => {
-            if ( e.target.id === GameSimon.lista[index].id) {
-                console.log("Voy bien");
-            } else {
-                console.log(GameSimon.lista[index].id);
-                console.log(e.target.id);
-                console.log("Mal, fatal, horrible");
-            }
+        return new Promise((resolve) => {
+            document.addEventListener('click', (e) => {
+                if (e.target.id === GameSimon.lista[index].id) {
+                    console.log("Voy bien");
+                } else {
+                    console.log(GameSimon.lista[index].id);
+                    console.log(e.target.id);
+                    console.log("Mal, fatal, horrible");
+                }
+            })
         })
     }
 }
