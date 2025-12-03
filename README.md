@@ -11,3 +11,4 @@ He pasado gran parte de la tarde del Jueves intentando añadir algo más, pero n
 
 
 ## Ejercicio Simon :
+En los commits puedes ver lo que he ido avanzando en cada momento de los días.
