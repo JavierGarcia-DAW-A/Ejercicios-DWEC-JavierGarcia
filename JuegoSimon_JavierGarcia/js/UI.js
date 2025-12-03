@@ -20,13 +20,22 @@ export const UI = {
     */
 
     lista: [],
+    textRellenar : null,
+
+    init : (texto) => {
+        UI.textRellenar = document.getElementById(texto);
+    },
 
     initTecla: (id, colorOn, colorOff, accion) => {
         const tecla = document.getElementById(id);
         tecla.style.backgroundColor = colorOff;
 
         tecla.addEventListener('click', () => {
+            tecla.style.backgroundColor = colorOn;
             accion(id);
+            setTimeout(() => {
+                tecla.style.backgroundColor = colorOff;
+            }, 500);
         })
 
 

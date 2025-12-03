@@ -32,6 +32,8 @@ const control = {
 
 //UI.pulsarTecla('tecla', 'blue', 'red');
 
+UI.init("info");
+
 UI.initTecla('teclaRoja', 'red', 'lightcoral', GameSimon.pulsaTeclaJugador);
 UI.initTecla('teclaAzul', 'blue', 'lightcyan', GameSimon.pulsaTeclaJugador);
 UI.initTecla('teclaAmarilla', 'yellow', 'lightyellow', GameSimon.pulsaTeclaJugador);

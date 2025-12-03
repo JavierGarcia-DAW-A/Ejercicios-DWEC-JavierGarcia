@@ -10,11 +10,13 @@ export const GameSimon = {
     },
 
     start: () => {
+        UI.textRellenar.innerHTML = "Mostrando la secuencia";
         GameSimon.turnoJugador = false;
         UI.start(GameSimon.listaOrden, GameSimon.turnoJugador1);
     },
 
     turnoJugador1: () => {
+        UI.textRellenar.innerHTML = "Te toca repetirla!";
         GameSimon.turnoJugador = true;
         console.log("Ahora le toca al jugador");
     },
@@ -22,14 +24,17 @@ export const GameSimon = {
     pulsaTeclaJugador : (idTecla) => {
 
         if ( GameSimon.turnoJugador === true ) {
+
             if ( GameSimon.indice < GameSimon.listaOrden.length ) {
 
                 console.log(GameSimon.listaOrden.length);
                 if (idTecla === UI.lista[GameSimon.listaOrden[GameSimon.indice]].id) {
+                    UI.textRellenar.innerHTML = "Correcto, sigue así!";
                     console.log("Comprobación correcta")
                     GameSimon.indice = GameSimon.indice + 1;
                     console.log(GameSimon.indice);
                 } else {
+                    UI.textRellenar.innerHTML = "Oh no, has fallado!"
                     console.log("Comprobación mala");
                     GameSimon.turnoJugador = false;
 
