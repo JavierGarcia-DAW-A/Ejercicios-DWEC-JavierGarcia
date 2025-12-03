@@ -22,14 +22,26 @@ export const GameSimon = {
     pulsaTeclaJugador : (idTecla) => {
 
         if ( GameSimon.turnoJugador === true ) {
-            if (idTecla === UI.lista[GameSimon.listaOrden[GameSimon.indice]].id) {
-                console.log("Comprobación correcta")
-                GameSimon.indice = GameSimon.indice + 1;
-                console.log(GameSimon.indice);
-            } else {
-                console.log("Comprobación mala");
-                GameSimon.turnoJugador = false;
+            if ( GameSimon.indice < GameSimon.listaOrden.length ) {
 
+                console.log(GameSimon.listaOrden.length);
+                if (idTecla === UI.lista[GameSimon.listaOrden[GameSimon.indice]].id) {
+                    console.log("Comprobación correcta")
+                    GameSimon.indice = GameSimon.indice + 1;
+                    console.log(GameSimon.indice);
+                } else {
+                    console.log("Comprobación mala");
+                    GameSimon.turnoJugador = false;
+
+                }
+
+            } else {
+
+                console.log("has llegado al tope");
+                let nuevoElemento = Math.floor(Math.random() * 4);
+                GameSimon.listaOrden.push(nuevoElemento);
+                GameSimon.indice = 0;
+                GameSimon.start();
             }
         }
     },
