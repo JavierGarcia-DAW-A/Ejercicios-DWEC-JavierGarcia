@@ -1,41 +1,28 @@
 import { UI } from "./UI.js";
 
 export const GameSimon = {
-    lista: [],
     listaOrden: [],
+    turnoJugador : false,
 
     setListaOrden: (listaOrden) => {
         GameSimon.listaOrden = listaOrden;
     },
 
-    add: (id, colorOn, colorOff) => {
-        GameSimon.lista.push({
-            id: id,
-            colorOn: colorOn,
-            colorOff: colorOff
-        })
-        console.log(GameSimon.lista);
+    start: () => {
+        GameSimon.turnoJugador = false;
+        UI.start(GameSimon.listaOrden, GameSimon.turnoJugador1);
     },
 
-
-    start: async () => {
-        for (let index of GameSimon.listaOrden) {
-            const elemento = GameSimon.lista[index];
-            await UI.pulsarTecla(elemento);
-        }
-
-        for (let index of GameSimon.listaOrden) {
-            const elemento = GameSimon.lista[index];
-            console.log(elemento.id);
-            await GameSimon.turnoJugador(elemento).then((valor) => {
-                console.log("Siguiente tecla");
-            }, (valor) => {
-                console.log("Has fallado");
-            });
-        }
+    turnoJugador1: () => {
+        GameSimon.turnoJugador = true;
+        console.log("Ahora le toca al jugador");
     },
 
-    turnoJugador: (elemento) => {
+    pulsaTeclaJugador : () => {
+        
+    },
+
+    turnoJugador3: (elemento) => {
         return new Promise((resolve, reject) => {
             /*GameSimon.pruebaVoz();*/
             document.addEventListener('click', (e) => {

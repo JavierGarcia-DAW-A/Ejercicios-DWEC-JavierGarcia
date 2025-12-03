@@ -19,14 +19,33 @@ export const UI = {
         },
     */
 
-    init: (id, colorOn, colorOff) => {
-        const tecla = document.getElementById(id);
-        tecla.style.backgroundColor = colorOn;
+    lista: [],
 
-        setTimeout(() => {
-            tecla.style.backgroundColor = colorOff;
-        });
+    initTecla: (id, colorOn, colorOff, accion) => {
+        const tecla = document.getElementById(id);
+        tecla.style.backgroundColor = colorOff;
+        tecla.addEventListener('click', () => {
+            accion(id);
+        })
+
+        UI.lista.push({
+            id: id,
+            colorOn: colorOn,
+            colorOff: colorOff,
+        })
     },
+
+    start: async (orden, fin) => {
+        for (let index of orden) {
+            const elemento = UI.lista[index];
+            await UI.pulsarTecla(elemento);
+        }
+
+        console.log(UI.lista);
+
+        fin();
+    },
+
 
     pulsarTecla: async (elemento) => {
         return new Promise((resolve) => {
@@ -39,6 +58,5 @@ export const UI = {
             }, 1000);
         });
     },
-
 
 }

@@ -32,20 +32,13 @@ const control = {
 
 //UI.pulsarTecla('tecla', 'blue', 'red');
 
-UI.init('teclaRoja', 'red', 'lightcoral');
-UI.init('teclaAzul', 'blue', 'lightcyan');
-UI.init('teclaAmarilla', 'yellow', 'lightyellow');
-UI.init('teclaVerde', 'green', 'lightgreen');
-
-GameSimon.add('teclaRoja', 'red', 'lightcoral');
-GameSimon.add('teclaAzul', 'blue', 'lightcyan');
-GameSimon.add('teclaAmarilla', 'yellow', 'lightyellow');
-GameSimon.add('teclaVerde', 'green', 'lightgreen');
+UI.initTecla('teclaRoja', 'red', 'lightcoral', GameSimon.pulsaTeclaJugador);
+UI.initTecla('teclaAzul', 'blue', 'lightcyan', GameSimon.pulsaTeclaJugador);
+UI.initTecla('teclaAmarilla', 'yellow', 'lightyellow', GameSimon.pulsaTeclaJugador);
+UI.initTecla('teclaVerde', 'green', 'lightgreen',GameSimon.pulsaTeclaJugador);
 
 GameSimon.setListaOrden([0,2,3,1,3,0,1,0]);
 
-setTimeout(() => {
-    GameSimon.start();
-},1000)
+GameSimon.start();
 
 
