@@ -29,6 +29,8 @@ export const UI = {
             accion(id);
         })
 
+
+
         UI.lista.push({
             id: id,
             colorOn: colorOn,

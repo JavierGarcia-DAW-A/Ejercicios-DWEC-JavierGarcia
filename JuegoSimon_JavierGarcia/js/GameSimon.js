@@ -3,6 +3,7 @@ import { UI } from "./UI.js";
 export const GameSimon = {
     listaOrden: [],
     turnoJugador : false,
+    indice : 0,
 
     setListaOrden: (listaOrden) => {
         GameSimon.listaOrden = listaOrden;
@@ -20,10 +21,16 @@ export const GameSimon = {
 
     pulsaTeclaJugador : (idTecla) => {
 
-        if (idTecla === UI.lista[GameSimon.listaOrden[2]].id) {
-            console.log("Comprobación correcta")
-        } else {
-            console.log("Comprobación mala");
+        if ( GameSimon.turnoJugador === true ) {
+            if (idTecla === UI.lista[GameSimon.listaOrden[GameSimon.indice]].id) {
+                console.log("Comprobación correcta")
+                GameSimon.indice = GameSimon.indice + 1;
+                console.log(GameSimon.indice);
+            } else {
+                console.log("Comprobación mala");
+                GameSimon.turnoJugador = false;
+
+            }
         }
     },
 
