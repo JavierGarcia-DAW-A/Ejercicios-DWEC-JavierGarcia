@@ -21,7 +21,7 @@ export const GameSimon = {
     start: async () => {
         for (let index of GameSimon.listaOrden) {
             const elemento = GameSimon.lista[index];
-            await GameSimon.pulsarTecla(elemento);
+            await UI.pulsarTecla(elemento);
         }
 
         for (let index of GameSimon.listaOrden) {
@@ -35,19 +35,6 @@ export const GameSimon = {
         }
     },
 
-
-    pulsarTecla: async (elemento) => {
-        return new Promise((resolve) => {
-            const tecla = document.getElementById(elemento.id);
-            tecla.style.backgroundColor = elemento.colorOn;
-
-            setTimeout(() => {
-                tecla.style.backgroundColor = elemento.colorOff;
-                resolve(99);
-            }, 1000);
-        });
-    },
-
     turnoJugador: (elemento) => {
         return new Promise((resolve, reject) => {
             /*GameSimon.pruebaVoz();*/
@@ -59,10 +46,8 @@ export const GameSimon = {
                     console.log(elemento.id);
                     console.log(e.target.id);
                     console.log("Mal, fatal, horrible");
-                    reject(34)
+                    reject(34);
                 }
-
-
             })
         })
     },
