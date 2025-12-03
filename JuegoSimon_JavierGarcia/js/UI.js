@@ -24,6 +24,7 @@ export const UI = {
     initTecla: (id, colorOn, colorOff, accion) => {
         const tecla = document.getElementById(id);
         tecla.style.backgroundColor = colorOff;
+
         tecla.addEventListener('click', () => {
             accion(id);
         })

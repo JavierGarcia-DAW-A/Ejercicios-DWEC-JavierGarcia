@@ -35,7 +35,7 @@ const control = {
 UI.initTecla('teclaRoja', 'red', 'lightcoral', GameSimon.pulsaTeclaJugador);
 UI.initTecla('teclaAzul', 'blue', 'lightcyan', GameSimon.pulsaTeclaJugador);
 UI.initTecla('teclaAmarilla', 'yellow', 'lightyellow', GameSimon.pulsaTeclaJugador);
-UI.initTecla('teclaVerde', 'green', 'lightgreen',GameSimon.pulsaTeclaJugador);
+UI.initTecla('teclaVerde', 'green', 'lightgreen', GameSimon.pulsaTeclaJugador);
 
 GameSimon.setListaOrden([0,2,3,1,3,0,1,0]);
 

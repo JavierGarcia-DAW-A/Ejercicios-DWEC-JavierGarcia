@@ -18,25 +18,13 @@ export const GameSimon = {
         console.log("Ahora le toca al jugador");
     },
 
-    pulsaTeclaJugador : () => {
-        
-    },
+    pulsaTeclaJugador : (idTecla) => {
 
-    turnoJugador3: (elemento) => {
-        return new Promise((resolve, reject) => {
-            /*GameSimon.pruebaVoz();*/
-            document.addEventListener('click', (e) => {
-                if (e.target.id === elemento.id) {
-                    console.log("Voy bien");
-                    resolve(99);
-                } else {
-                    console.log(elemento.id);
-                    console.log(e.target.id);
-                    console.log("Mal, fatal, horrible");
-                    reject(34);
-                }
-            })
-        })
+        if (idTecla === UI.lista[GameSimon.listaOrden[2]].id) {
+            console.log("Comprobación correcta")
+        } else {
+            console.log("Comprobación mala");
+        }
     },
 
     /*
