@@ -22,10 +22,12 @@ export const UI = {
 
     lista: [],
     textRellenar : null,
+    btnStart : null,
     jugar : new JuegoSimon(),
 
     init : (texto) => {
         UI.textRellenar = document.getElementById(texto);
+        
     },
 
     initTecla: (id, colorOn, colorOff) => {
@@ -38,7 +40,8 @@ export const UI = {
             setTimeout(() => {
                 tecla.style.backgroundColor = colorOff;
             }, 500);
-        })
+
+        });
 
 
 
@@ -51,6 +54,7 @@ export const UI = {
     },
 
     start: async (orden) => {
+        UI.textRellenar.innerHTML = "Mostrando la secuencia";
         console.log(orden);
         for ( let index of orden ) {
             const elemento = UI.lista[index];
@@ -60,6 +64,7 @@ export const UI = {
         console.log(UI.lista);
 
         UI.jugar.turnoJugador1();
+        UI.textRellenar.innerHTML = "Te toca repetirla!";
         UI.jugar.listaOrden = orden;
     },
 
@@ -75,5 +80,17 @@ export const UI = {
             }, 1000);
         });
     },
+
+    mensajeCorrecto: () => {
+        UI.textRellenar.innerHTML = "Correcto, sigue así";
+    },
+
+    mensajeMal: () => {
+        UI.textRellenar.innerHTML = "Oh no, has fallado! Inicia una nueva partida.";
+    },
+
+    mensajeFinRonda: () => {
+        UI.textRellenar.innerHTML = "ENHORABUENA, AVANZAS A LA SIGUIENTE RONDA";
+    }
 
 }

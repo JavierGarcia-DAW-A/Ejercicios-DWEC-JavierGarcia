@@ -12,13 +12,11 @@ export class JuegoSimon {
     };
 
     start () {
-        UI.textRellenar.innerHTML = "Mostrando la secuencia";
         this.turnoJugador = false;
         UI.start(this.listaOrden);
     };
 
     turnoJugador1() {
-        UI.textRellenar.innerHTML = "Te toca repetirla!";
         this.turnoJugador = true;
         console.log("Ahora le toca al jugador");
     };
@@ -34,14 +32,16 @@ export class JuegoSimon {
 
                 if (idTecla === UI.lista[this.listaOrden[this.indice]].id) {
 
-                    UI.textRellenar.innerHTML = "Correcto, sigue así!";
+                    /* UI.textRellenar.innerHTML = "Correcto, sigue así!"; */
+                    UI.mensajeCorrecto();
                     console.log("Comprobación correcta")
                     this.indice = this.indice + 1;
                     console.log(this.indice);
 
                 } else {
 
-                    UI.textRellenar.innerHTML = "Oh no, has fallado! Inicia una nueva partida."
+                    /* UI.textRellenar.innerHTML = "Oh no, has fallado! Inicia una nueva partida." */
+                    UI.mensajeMal();
                     console.log("Comprobación mala");
                     this.turnoJugador = false;
 
@@ -50,7 +50,7 @@ export class JuegoSimon {
             } else {
 
                 console.log("has llegado al tope");
-                UI.textRellenar.innerHTML = "MUY BIEN! SIGUIENTE RONDA!"
+                UI.mensajeFinRonda();
                 let nuevoElemento = Math.floor(Math.random() * 4);
                 this.listaOrden.push(nuevoElemento);
                 this.indice = 0;
