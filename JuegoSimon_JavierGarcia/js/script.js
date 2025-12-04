@@ -44,6 +44,8 @@ UI.initTecla('teclaVerde', 'green', 'lightgreen');
 
 juego.setListaOrden([0,2,3,1,3,0,1,0]);
 
-juego.start();
+document.getElementById("btn").addEventListener('click', () => {
+        juego.start();
+});
 
 

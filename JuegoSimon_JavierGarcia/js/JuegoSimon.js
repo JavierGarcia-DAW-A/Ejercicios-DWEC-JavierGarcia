@@ -41,7 +41,7 @@ export class JuegoSimon {
 
                 } else {
 
-                    UI.textRellenar.innerHTML = "Oh no, has fallado!"
+                    UI.textRellenar.innerHTML = "Oh no, has fallado! Inicia una nueva partida."
                     console.log("Comprobación mala");
                     this.turnoJugador = false;
 
