@@ -24,6 +24,7 @@ export const UI = {
     textRellenar : null,
     btnStart : null,
     jugar : new JuegoSimon(),
+    sound : new Audio("./sonido/pitido.mp3"),
 
     init : (texto) => {
         UI.textRellenar = document.getElementById(texto);
@@ -36,6 +37,7 @@ export const UI = {
 
         tecla.addEventListener('click', () => {
             tecla.style.backgroundColor = colorOn;
+            UI.sound.play();
             UI.jugar.pulsaTeclaJugador(id);
             setTimeout(() => {
                 tecla.style.backgroundColor = colorOff;
@@ -73,6 +75,7 @@ export const UI = {
         return new Promise((resolve) => {
             const tecla = document.getElementById(elemento.id);
             tecla.style.backgroundColor = elemento.colorOn;
+            UI.sound.play();
 
             setTimeout(() => {
                 tecla.style.backgroundColor = elemento.colorOff;
