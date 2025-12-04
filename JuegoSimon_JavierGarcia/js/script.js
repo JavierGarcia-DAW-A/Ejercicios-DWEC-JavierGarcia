@@ -1,5 +1,6 @@
 import { UI } from "./UI.js";
-import { GameSimon } from "./GameSimon.js";
+//import { GameSimon } from "./GameSimon.js";
+import { JuegoSimon } from "./JuegoSimon.js";
 // import { TimeHandler } from "./TimeHandler.js";
 
 // UI.init({
@@ -34,13 +35,15 @@ const control = {
 
 UI.init("info");
 
-UI.initTecla('teclaRoja', 'red', 'lightcoral', GameSimon.pulsaTeclaJugador);
-UI.initTecla('teclaAzul', 'blue', 'lightcyan', GameSimon.pulsaTeclaJugador);
-UI.initTecla('teclaAmarilla', 'yellow', 'lightyellow', GameSimon.pulsaTeclaJugador);
-UI.initTecla('teclaVerde', 'green', 'lightgreen', GameSimon.pulsaTeclaJugador);
+const juego = new JuegoSimon();
 
-GameSimon.setListaOrden([0,2,3,1,3,0,1,0]);
+UI.initTecla('teclaRoja', 'red', 'lightcoral');
+UI.initTecla('teclaAzul', 'blue', 'lightcyan');
+UI.initTecla('teclaAmarilla', 'yellow', 'lightyellow');
+UI.initTecla('teclaVerde', 'green', 'lightgreen');
 
-GameSimon.start();
+juego.setListaOrden([0,2,3,1,3,0,1,0]);
+
+juego.start();
 
 

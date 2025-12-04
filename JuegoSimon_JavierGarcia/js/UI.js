@@ -1,4 +1,5 @@
-import { GameSimon } from "./GameSimon.js";
+//import { GameSimon } from "./GameSimon.js";
+import { JuegoSimon } from "./JuegoSimon.js";
 
 export const UI = {
     /*
@@ -21,18 +22,19 @@ export const UI = {
 
     lista: [],
     textRellenar : null,
+    jugar : new JuegoSimon(),
 
     init : (texto) => {
         UI.textRellenar = document.getElementById(texto);
     },
 
-    initTecla: (id, colorOn, colorOff, accion) => {
+    initTecla: (id, colorOn, colorOff) => {
         const tecla = document.getElementById(id);
         tecla.style.backgroundColor = colorOff;
 
         tecla.addEventListener('click', () => {
             tecla.style.backgroundColor = colorOn;
-            accion(id);
+            UI.jugar.pulsaTeclaJugador(id);
             setTimeout(() => {
                 tecla.style.backgroundColor = colorOff;
             }, 500);
@@ -45,17 +47,20 @@ export const UI = {
             colorOn: colorOn,
             colorOff: colorOff,
         })
+
     },
 
-    start: async (orden, fin) => {
-        for (let index of orden) {
+    start: async (orden) => {
+        console.log(orden);
+        for ( let index of orden ) {
             const elemento = UI.lista[index];
             await UI.pulsarTecla(elemento);
         }
 
         console.log(UI.lista);
 
-        fin();
+        UI.jugar.turnoJugador1();
+        UI.jugar.listaOrden = orden;
     },
 
 
