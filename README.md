@@ -13,6 +13,8 @@ He pasado gran parte de la tarde del Jueves intentando añadir algo más, pero n
 ## Ejercicio Simon :
 En los commits puedes ver lo que he ido avanzando en cada momento de los días.
 
-El juego funciona como debe, separada la interfaz de la lógica del juego. Hay un mensajito el cual va mostrando en todo momento el estado del juego y un botoón para que cuando el usuario ingrese a la página sea él el que decida comenzar el juego y en caso de que falle lo puede reiniciar desde ahí. Reproduce sonido cada vez que se ilumina una tecla, ya sea mostrando la secuencia o cuando clickeamos para comprobar si es correcta la tecla ( Vídeo del que me he orientado: https://www.youtube.com/shorts/rPvOBmhE6R4 ). 
+El juego funciona como debe, separada la interfaz de la lógica del juego. Hay un mensajito el cual va mostrando en todo momento el estado del juego y un botoón para que cuando el usuario ingrese a la página sea él el que decida comenzar el juego y en caso de que falle lo puede reiniciar desde ahí. Reproduce sonido cada vez que se ilumina una tecla, ya sea mostrando la secuencia o cuando clickeamos para comprobar si es correcta la tecla ( Vídeo del que me he orientado: https://www.youtube.com/shorts/rPvOBmhE6R4 ).
+
+He añadido las animaciones usando un CDN, el cuál lo he sacado de esta URL ( https://cdnjs.com/libraries/animejs ), y he usado la versión 3.2.1, ya que según el vídeo tutorial de Youtube que he estado viendo es la más estable hasta el momento( Vídeo del que me he orientado: https://www.youtube.com/watch?v=WQVTIUpoFQQ ).
 
 He planteado la opción de la voz, pero al introducirla me falla todo y no se como arreglarlo.
