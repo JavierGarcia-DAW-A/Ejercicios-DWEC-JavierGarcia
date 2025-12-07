@@ -1,24 +1,6 @@
-//import { GameSimon } from "./GameSimon.js";
-import { JuegoSimon } from "./JuegoSimon.js";
+import { JuegoSimon } from "./SimonGame.js";
 
 export const UI = {
-    /*
-        container:null,
-        template:null,
-    
-        init: (config) =>{
-            UI.container = document.getElementById(config.container);
-            UI.template = document.getElementById(config.template);   
-        },
-    
-        add:() => {
-            const clon = UI.template.content.cloneMode(true);
-            const box = clon.querySelector('.box');
-    
-            UI.container.appendChild(clon);
-            
-        },
-    */
 
     lista: [],
     textRellenar : null,
@@ -39,6 +21,15 @@ export const UI = {
             tecla.style.backgroundColor = colorOn;
             UI.sound.play();
             UI.jugar.pulsaTeclaJugador(id);
+
+            anime({
+                targets: tecla,
+                 scale: [
+                    { value: 1.15, duration: 320 },
+                    { value: 1.0, duration: 220 }
+                ],
+            });
+
             setTimeout(() => {
                 tecla.style.backgroundColor = colorOff;
             }, 500);
@@ -76,6 +67,14 @@ export const UI = {
             const tecla = document.getElementById(elemento.id);
             tecla.style.backgroundColor = elemento.colorOn;
             UI.sound.play();
+
+            anime({
+                targets: tecla,
+                 scale: [
+                    { value: 1.15, duration: 320 },
+                    { value: 1.0, duration: 220 }
+                ],
+            });
 
             setTimeout(() => {
                 tecla.style.backgroundColor = elemento.colorOff;
